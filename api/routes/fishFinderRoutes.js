@@ -3,6 +3,10 @@ module.exports = function(app) {
   const fishFinder = require('../controllers/fishFinderController');
 
   //  fishFinder Routes
+  app.route('/', (req, res) => {
+    res.redirect('/fishingspot');
+  });
+
   app.route('/fishingspot')
     .get(fishFinder.list_all_fishingspots)
     .post(fishFinder.create_a_fishingspot);
